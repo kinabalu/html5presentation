@@ -66,6 +66,8 @@
 						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
 					</aside>
 				</section>
+				<section fullscreen-img="images/skydiving.png" />
+				</section>				
 				<section>
 					<section>
 						<h1>A brief history of time</h1>
@@ -101,10 +103,21 @@
 
 				</section>
 				<section>
-					<img src="images/HTML5-APIs-and-related-technologies-by-Sergey-Mavrody.png" border="0" />
+				    <object type="image/svg+xml" width="300" height="300" data="images/HTML5-Logo.svg"></object>
+
+					<p><strong>HTML5</strong> is a replacement for <strong>HTML 4.01</strong>, <strong>XHTML 1.0</strong>, and <strong>XHTML 1.1</strong></p>
+					<aside class="notes">
+						Talk about the microsoft application for testing Internet Explorer
+					</aside>
 				</section>
-				<section fullscreen-img="images/skydiving.png" />
-					<h2>A title</h2>
+				<section>
+				    <object type="image/svg+xml" width="300" height="300" data="images/HTML5-Logo.svg"></object>
+					
+					<p><strong><a href="http://en.wikipedia.org/wiki/HTML5">HTML5</a></strong> is a combination of <strong><a href="http://en.wikipedia.org/wiki/HTML5">HTML</a></strong>, <strong><a href="http://en.wikipedia.org/wiki/Javascript">JavaScript</a></strong>, and <strong><a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets#CSS_3">CSS3</a></strong></p>
+
+				</section>
+				<section>
+					<img src="images/HTML5-APIs-and-related-technologies-by-Sergey-Mavrody.png" border="0" />
 				</section>
 
 				<section>
@@ -192,9 +205,32 @@ document.getElementById("video").play();
 					    <object type="image/svg+xml" data="images/arrow_down.svg"></object>
 					</section>
 					<section>
+						<h2>HTML5 Audio</h2>
+
+<pre><code>&lt;audio 
+	id="audio"
+	src="elvis.mp3" 
+	controls 
+	autobuffer /&gt;
+</code></pre>
+
+<pre><code>document.getElementById("audio").play();</code></pre>
+					</section>
+					<section>
 						<h2>Can I use it?</h2>
 						<iframe src="http://caniuse.com/audio/embed" width="100%" height="100%"></iframe>
-					</section>
+					</section>					
+					<section>
+						<h2>HTML5 Audio In Practice</h2>
+
+<pre><code>&lt;audio controls autobuffer&gt;
+	&lt;source src=&quot;elvis.ogg&quot; /&gt;
+	&lt;source src=&quot;elvis.mp3&quot; /&gt;
+&lt;/audio&gt;
+</code></pre>
+
+<pre><code>document.getElementById("audio").play();</code></pre>
+					</section>									
 				</section>
 
 				<section>
@@ -224,6 +260,32 @@ if(Modernizr.video) {
 					<section>
 						<h1>SVG</h1>
 					    <object type="image/svg+xml" data="images/arrow_down.svg"></object>
+					</section>
+					<section>
+						<h2>Embedding in HTML5</h2>
+<pre><code>&lt;object type=&quot;image/svg+xml&quot; data=&quot;images/HTML5-Logo.svg&quot;&gt;&lt;/object&gt;
+</code></pre>
+						<object class="fragment" type="image/svg+xml" width="300" height="300" data="images/HTML5-Logo.svg"></object>
+					</section>
+					<section>
+						<h2>SVG Inline</h2>
+<pre><code>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
+&lt;!DOCTYPE svg PUBLIC &quot;-//W3C//DTD SVG 1.1//EN&quot; &quot;http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd&quot;&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 512 512&quot;&gt;
+	&lt;title&gt;HTML5 Logo&lt;/title&gt;
+	&lt;polygon fill=&quot;#E44D26&quot; points=&quot;107.644,470.877 74.633,100.62 437.367,100.62 404.321,470.819 255.778,512&quot;/&gt;
+	&lt;polygon fill=&quot;#F16529&quot; points=&quot;256,480.523 376.03,447.246 404.27,130.894 256,130.894&quot;/&gt;
+	&lt;polygon fill=&quot;#EBEBEB&quot; points=&quot;256,268.217 195.91,268.217 191.76,221.716 256,221.716 256,176.305 255.843,176.305 142.132,176.305 143.219,188.488 154.38,313.627 256,313.627&quot;/&gt;
+	&lt;polygon fill=&quot;#EBEBEB&quot; points=&quot;256,386.153 255.801,386.206 205.227,372.55 201.994,336.333 177.419,336.333 156.409,336.333 162.771,407.634 255.791,433.457 256,433.399&quot;/&gt;
+	&lt;path d=&quot;M108.382,0h23.077v22.8h21.11V0h23.078v69.044H152.57v-23.12h-21.11v23.12h-23.077V0z&quot;/&gt;
+	&lt;path d=&quot;M205.994,22.896h-20.316V0h63.72v22.896h-20.325v46.148h-23.078V22.896z&quot;/&gt;
+	&lt;path d=&quot;M259.511,0h24.063l14.802,24.26L313.163,0h24.072v69.044h-22.982V34.822l-15.877,24.549h-0.397l-15.888-24.549v34.222h-22.58V0z&quot;/&gt;
+	&lt;path d=&quot;M348.72,0h23.084v46.222h32.453v22.822H348.72V0z&quot;/&gt;
+	&lt;polygon fill=&quot;#FFFFFF&quot; points=&quot;255.843,268.217 255.843,313.627 311.761,313.627 306.49,372.521 255.843,386.191 255.843,433.435 348.937,407.634 349.62,399.962 360.291,280.411 361.399,268.217 349.162,268.217&quot;/&gt;
+	&lt;polygon fill=&quot;#FFFFFF&quot; points=&quot;255.843,176.305 255.843,204.509 255.843,221.605 255.843,221.716 365.385,221.716 365.385,221.716 365.531,221.716 366.442,211.509 368.511,188.488 369.597,176.305&quot;/&gt;
+&lt;/svg&gt;	
+</code></pre>
 					</section>
 					<section>
 						<h2>Can I use it?</h2>
@@ -279,12 +341,8 @@ if(Modernizr.video) {
 						<h2>Canvas</h2>
 						<p>What up</p>
 					</section>
-					<section>
+					<section id="wolfenstein">
 					<h2>Wolfenstein 3D</h2>
-					<p>
-						
-						
-					</p>
 					</section>
 					<section id="balloonshooter" data-state="balloonshooter">
 						<h2>Balloon Shooter</h2>
@@ -434,6 +492,10 @@ search: while (true) {
 			    if(event.previousSlide.getAttribute('id')=='balloonshooter') {
 			    	document.getElementById('balloonshooter_iframe').parentNode.removeChild(document.getElementById('balloonshooter_iframe'));
 				}
+			    if(event.previousSlide.getAttribute('id')=='wolfenstein') {
+			    	document.getElementById('wolfenstein_iframe').parentNode.removeChild(document.getElementById('wolfenstein_iframe'));
+				}
+
 				if(event.currentSlide.getAttribute('id')=='balloonshooter') {
 					var iframe = document.createElement("iframe");
 					iframe.src = "balloonshooter/bubbles/index.html";
@@ -442,6 +504,15 @@ search: while (true) {
 					iframe.height = '100%';
 					document.getElementById('balloonshooter').appendChild(iframe);					
 				}
+				if(event.currentSlide.getAttribute('id')=='wolfenstein') {
+					var iframe = document.createElement("iframe");
+					iframe.src = "http://www.nihilogic.dk/labs/wolf/";
+					iframe.id = 'wolfenstein_iframe';
+					iframe.width = '100%';
+					iframe.height = '100%';
+					document.getElementById('wolfenstein').appendChild(iframe);					
+				}
+
 			} );			
 			Reveal.addEventListener( 'overviewshown', function( event ) { 
 			} );
