@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>The HTML Landscape</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="reveal.js/css/reveal.min.css">
+		<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="css/reset.css">
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+		<link rel="stylesheet" href="reveal.js-fullscreen-img/fullscreen-img.css" />
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+
+
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="reveal.js/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+				    <object type="image/svg+xml" width="300" height="300" data="images/HTML5-Logo.svg"></object>
+
+					<h1>The HTML5 Landscape</h1>
+					<h3>HTML Presentations Made Easy</h3>
+					<p>
+						<small><a href="http://mysticcoders.com">Andrew Lombardi</a> / <a href="http://twitter.com/kinabalu">@kinabalu</a></small>
+					</p>
+					<p>
+						<small><a href="http://mysticcoders.com">Mystic Coders, LLC</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>About Me</h2>
+					<img src="images/me_and_jd.png" />
+					<p>
+						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
+						support for CSS 3D transforms to see it in its full glory.
+					</p>
+
+					<aside class="notes">
+						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					</aside>
+				</section>
+				<section>
+					<section>
+						<h1>A brief history of time</h1>
+					</section>
+					<section>
+						<h2>A brief history of time</h2>
+						<ul>
+							<li class="fragment">1991 - First version of HTML</li>
+							<li class="fragment">1994 - HTML2 is born</li>
+							<li class="fragment">1996 - CSS1 + JavaScript</li>
+							<li class="fragment">1996 - First "developer" mistakes JavaScript for Java</li>
+						</ul>
+					</section>
+					<section>
+						<h2>A brief history of time</h2>
+						<ul>
+							<li class="fragment">1997 - HTML4</li>
+							<li class="fragment">1998 - CSS2</li>
+							<li class="fragment">2000 - XHTML is hatched</li>
+							<li class="fragment">2000 - Malformed HTML writers are burned at stake</li>
+						</ul>
+					</section>
+					<section>
+						<h2>A brief history of time</h2>
+						<ul>
+							<li class="fragment"><a href="#">2002</a> - Tableless Web Design</li>
+							<li class="fragment">2002 - Average HTML page creation 5x longer</li>
+							<li class="fragment">2005 - AJAX is born</li>
+							<li class="fragment">2009 - HTML5</li>
+							<li class="fragment">2011 - HTML5 gets a logo!</li>
+						</ul>
+					</section>
+
+				</section>
+				<section>
+					<img src="images/HTML5-APIs-and-related-technologies-by-Sergey-Mavrody.png" border="0" />
+				</section>
+				<section fullscreen-img="images/skydiving.png" />
+					<h2>A title</h2>
+				</section>
+
+				<section>
+					<section>
+						<h1>HTML5 Video</h1>
+					    <object type="image/svg+xml" data="images/arrow_down.svg"></object>
+					</section>
+					<section>
+						<h2>HTML5 Video</h2>
+
+						<video width="640" height="360" controls poster="assets/poster.jpg">
+							<source src="assets/big_buck_bunny.mp4"  type="video/mp4"  />
+							<source src="assets/big_buck_bunny.webm" type="video/webm" />
+							<source src="assets/big_buck_bunny.ogv"  type="video/ogg"  />
+							<object width="640" height="384" type="application/x-shockwave-flash" data="assets/player.swf">
+								<param name="movie" value="player.swf" />
+								<param name="flashvars" value="controlbar=over&amp;image=assets/poster.jpg&amp;file=assets/big_buck_bunny.mp4" />
+								<img src="assets/poster.jpg" width="640" height="360" alt="Big Buck Bunny"
+								title="No video playback capabilities, please download the video below" />
+							</object>
+						</video>
+					</section>
+					<section>
+						<h2>HTML5 Video</h2>
+
+<pre><code>
+&lt;video 
+	id=”video”
+	width="640" 
+	height="360" 
+	src="big_buck_bunny.mp4" 
+	controls 
+	poster="poster.jpg"&gt;
+&lt;/video&gt;
+</code></pre>
+
+<pre><code>
+document.getElementById("video").play();	
+</code></pre>
+					</section>
+					<section>
+						<h2>HTML5 Video Codecs</h2>
+						<p><a href="#">Ogg</a> - Not patent encumbered but quality is not there</p>
+						<p><a href="#">H.264</a> - Only pay royalties if end-user video is not free</p>
+						<p><a href="#">WebM / VP8</a> - Google released as royalty free after purchasing from On2</p>
+							<p>&nbsp;</p>
+						<h3 class="fragment">Patent landscape for video is unclear</h3>
+					</section>
+					<section>
+						<h2>HTML5 Video</h2>
+<pre><code>
+&lt;video width=&quot;640&quot; height=&quot;360&quot; controls poster=&quot;poster.jpg&quot;&gt;
+	&lt;source src=&quot;big_buck_bunny.mp4&quot;  type=&quot;video/mp4&quot;  /&gt;
+	&lt;source src=&quot;big_buck_bunny.webm&quot; type=&quot;video/webm&quot; /&gt;
+	&lt;source src=&quot;big_buck_bunny.ogv&quot;  type=&quot;video/ogg&quot;  /&gt;
+	&lt;object width=&quot;640&quot; height=&quot;384&quot; type=&quot;application/x-shockwave-flash&quot; data=&quot;player.swf&quot;&gt;
+		&lt;param name=&quot;movie&quot; value=&quot;player.swf&quot; /&gt;
+		&lt;param name=&quot;flashvars&quot; value=&quot;controlbar=over&amp;amp;image=poster.jpg&amp;amp;file=big_buck_bunny.mp4&quot; /&gt;
+		&lt;img src=&quot;poster.jpg&quot; width=&quot;640&quot; height=&quot;360&quot; alt=&quot;Big Buck Bunny&quot;
+		title=&quot;No video playback capabilities, please download the video below&quot; /&gt;
+	&lt;/object&gt;
+&lt;/video&gt;
+</code></pre>
+					</section>
+					<section>
+						<h2>Video Tag Browser Support</h2>
+						<iframe src="http://caniuse.com/video/embed" width="100%" height="100%"></iframe>
+					</section>
+					<section>
+						<h2>WebM/VP8</h2>
+						<iframe src="http://caniuse.com/webm/embed" width="100%" height="100%"></iframe>
+					</section>
+					<section>
+						<h2>MPEG4</h2>
+						<iframe src="http://caniuse.com/mpeg4/embed" width="100%" height="100%"></iframe>
+					</section>
+					<section>
+						<h2>Ogg/Theora</h2>
+						<iframe src="http://caniuse.com/ogv/embed" width="100%" height="100%"></iframe>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Feature Detection</h2>
+						<p>No more browser version testing, check for features</p>
+<pre><code>
+function supports_video() {
+	return !document.createElement('video').canPlayType;
+}	
+</code></pre>
+					</section>
+					<section>
+				    <object type="image/svg+xml" data="images/modernizr_logo.svg">     
+				    	<img src="images/modernizr_logo.png" alt="Blue Square"/>
+				    </object>
+
+<pre>
+<code>
+if(Modernizr.video) {
+	// let's play some video!
+}
+</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Canvas</h1>
+					</section>
+					<section>
+						<h2>Canvas</h2>
+						<p>What up</p>
+					</section>
+					<section>
+					<h2>Wolfenstein 3D</h2>
+					<p>
+						
+						
+					</p>
+					</section>
+					<section id="balloonshooter" data-state="balloonshooter">
+						<h2>Balloon Shooter</h2>
+					</section>
+				</section>
+
+
+				<section>
+					<section>
+						<h1>Web Storage</h1>
+					    <object type="image/svg+xml" data="images/arrow_down.svg"></object>
+
+					</section>
+					<section>
+						<h2>Example Code</h2>
+<pre><code>
+textarea.addEventListener('keyup', function () {
+	window.localStorage['value'] = area.value;
+	window.localStorage['timestamp'] = (new Date()).getTime();
+}, false);
+textarea.value = window.localStorage['value'];	
+</code></pre>
+					</section>
+					<section>
+						<h2>Web Storage</h2>
+
+						<form id="webstorage">
+
+							<textarea id="ta" placeholder="Type some text in here ... it will be saved between restarts" rows="10" cols="70"></textarea>
+
+						<button id="save-ta">Save</button>
+
+						<p id="ta-log"></p>
+
+						<script>
+						  var area = document.querySelector('#ta');
+						  // place content from previous edit
+						  if (!area.value) {
+						    area.value = window.localStorage.getItem('value');
+						  }
+						  updateLog(false);
+						  
+						  // your content will be saved locally
+						  document.querySelector('#save-ta').addEventListener('click', function () {
+						    window.localStorage.setItem('value', area.value);
+						    window.localStorage.setItem('timestamp', (new Date()).getTime());
+						    updateLog(true);
+						  }, false);
+
+						  function updateLog(new_save) {
+						    var log = document.querySelector("#ta-log");
+						    var delta = 0;
+						    if (window.localStorage.getItem('value')) {
+						      delta = ((new Date()).getTime() - (new Date()).setTime(window.localStorage.getItem('timestamp'))) / 1000;
+						      if (new_save) {
+						        log.textContent = 'Saved. Content will be available after browser refresh/reopen.';
+						        setTimeout(function() {
+						          log.textContent = '';
+						        }, 3000);
+						      } else {
+						        log.textContent = 'last saved: ' + delta + 's ago';
+						      }
+						    }
+						  }
+						  
+						</script>
+						</form>
+					</section>
+					<section>
+						<h2>Can I use it?</h2>
+						<iframe src="http://caniuse.com/namevalue-storage/embed" width="100%" height="100%"></iframe>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Web Workers</h1>
+					    <object type="image/svg+xml" data="images/arrow_down.svg"></object>
+					</section>
+					<section>
+						<h2>Web Workers</h2>
+<pre><code>
+  &lt;p&gt;The highest prime number discovered so far is: 
+  &lt;output id="result"&gt;&lt;/output&gt;&lt;/p&gt;
+</code></pre>						
+<pre><code>
+   var worker = new Worker('worker.js');
+   worker.onmessage = function (event) {
+     document.getElementById('result').textContent = event.data;
+   };	
+</pre></code>
+					</section>
+					<section>
+						<h2>Web Workers</h2>
+
+<pre><code>
+var n = 1;
+search: while (true) {
+  n += 1;
+  for (var i = 2; i <= Math.sqrt(n); i += 1)
+    if (n % i == 0)
+     continue search;
+  // found a prime!
+  postMessage(n);
+}	
+</code></pre>
+					</section>
+					<section>
+						<h2>Example goes here</h2>
+					</section>
+					<section>
+						<h2>Can I use it?</h2>
+						<iframe src="http://caniuse.com/webworkers/embed" width="100%" height="100%"></iframe>
+					</section>
+				</section>
+				<section>
+					<p><a href="http://whatwg.org/html5">HTML Standard</a></p>
+					<p><a href="http://mobilehtml5.org">Mobile HTML5 Compatibility</a></p>
+					<p><a href="http://validator.w3.org/">W3 Validator</a></p>
+					<p><a href="http://www.brucelawson.co.uk/category/html5/">Bruce Lawson HTML5</a></p>
+					<p><a href="http://html5doctor.com/">HTML5 Doctor</a></p>
+					<p><a href="http://diveintohtml5.org/">Dive Into HTML5</a></p>
+					<p><a href="http://www.modernizr.com/">Modernizr JS Library</a></p>
+					<p><a href="http://code.google.com/p/html5shiv/">HTML5 Shiv</a></p>
+					<p><a href="http://html5rocks.com">HTML5 Rocks</a></p>
+				</section>
+				<section>
+					<h1>Q & A</h1>
+					<h3>Andrew Lombardi / <a href="http://www.twitter.com/kinabalu">@kinabalu</a></h3>
+					<p>
+						kinabalu @ <a href="irc://irc.freenode.net">irc://irc.freenode.net</a> - ##wicket, ##java, #javascript
+					</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.min.js"></script>
+		<script>
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+			    // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+			    if(event.previousSlide.getAttribute('id')=='balloonshooter') {
+			    	document.getElementById('balloonshooter_iframe').parentNode.removeChild(document.getElementById('balloonshooter_iframe'));
+				}
+				if(event.currentSlide.getAttribute('id')=='balloonshooter') {
+					var iframe = document.createElement("iframe");
+					iframe.src = "balloonshooter/bubbles/index.html";
+					iframe.id = 'balloonshooter_iframe';
+					iframe.width = '100%';
+					iframe.height = '100%';
+					document.getElementById('balloonshooter').appendChild(iframe);					
+				}
+			} );			
+			Reveal.addEventListener( 'overviewshown', function( event ) { 
+			} );
+		</script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'reveal.js-fullscreen-img/fullscreen-img.js' }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
