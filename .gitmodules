@@ -4,3 +4,6 @@
 [submodule "reveal.js-fullscreen-img"]
 	path = reveal.js-fullscreen-img
 	url = git@github.com:regisb/reveal.js-fullscreen-img.git
+[submodule "balloonshooter"]
+	path = balloonshooter
+	url = git@github.com:kinabalu/balloonshooter.git
