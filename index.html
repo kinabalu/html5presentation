@@ -55,16 +55,23 @@
 				</section>
 
 				<section>
-					<h2>About Me</h2>
-					<img src="images/me_and_jd.png" />
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
+					<section>
+						<h2>About Me</h2>
+						<img src="images/me_and_jd.png" />
+						<aside class="notes">
+							Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+						</aside>						
+					</section>
+					<section>
+						<h2>About Me</h2>
+						<p class="fragment">13 Years in Business</p>
+						<p class="fragment">Software Consultants</p>
+						<p class="fragment">International Speakers</p>
+						<p class="fragment">Training</p>
+						<p class="fragment">HTML5 Hopeful</p>
+						<p>&nbsp;</p>
+						<p class="fragment"><strong>To our success!</strong></p>
+					</section>
 				</section>
 				<section fullscreen-img="images/skydiving.png" />
 				</section>				
@@ -269,7 +276,7 @@ if(Modernizr.video) {
 					</section>
 					<section>
 						<h2>SVG Inline</h2>
-<pre><code>
+<pre style="border: 1px solid #fff;"><code>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
 &lt;!DOCTYPE svg PUBLIC &quot;-//W3C//DTD SVG 1.1//EN&quot; &quot;http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd&quot;&gt;
 &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 512 512&quot;&gt;
@@ -293,13 +300,28 @@ if(Modernizr.video) {
 					</section>
 				</section>
 				<section>
+					<!--<script src="js/three.min.js"></script>-->
 					<section>
 						<h1>WebGL</h1>
 					    <object type="image/svg+xml" data="images/arrow_down.svg"></object>
 					</section>
 					<section>
+						<h2>The Cube</h2>
+<!--						<script src="js/webgl_cube.js"></script> -->
+						<canvas data-sample="webgl_spinning_colored_cube" style="display:inline" width="320" height="240"></canvas>						
+					</section>
+					<section>
 						<h2>Can I use it?</h2>
 						<iframe src="http://caniuse.com/webgl/embed" width="100%" height="100%"></iframe>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>GeoLocation</h1>
+					</section>
+					<section>
+						<h2>Can I use it?</h2>
+						<iframe src="http://caniuse.com/geolocation/embed" width="100%" height="100%"></iframe>
 					</section>
 				</section>
 				<section>
@@ -328,6 +350,17 @@ if(Modernizr.video) {
 					    <object type="image/svg+xml" data="images/arrow_down.svg"></object>
 					</section>
 					<section>
+						<h2>Semantic Tags in Internet Explorer</h2>
+
+<pre><code>
+&lt;!--[if lt IE 9]&gt;
+&lt;script src=&quot;http://html5shiv.googlecode.com/svn/trunk/html5.js&quot;&gt;
+&lt;/script&gt;
+&lt;![endif]--&gt;	
+</code></pre>
+
+					</section>
+					<section>
 						<h2>Can I use it?</h2>
 						<iframe src="http://caniuse.com/html5semantic/embed" width="100%" height="100%"></iframe>
 					</section>
@@ -338,8 +371,33 @@ if(Modernizr.video) {
 						<h1>Canvas</h1>
 					</section>
 					<section>
-						<h2>Canvas</h2>
-						<p>What up</p>
+						<h2>Drawing the Canvas</h2>
+						
+
+<pre><code>
+&lt;canvas id=&quot;someshape&quot; width=&quot;150&quot; height=&quot;150&quot;&gt;&lt;/canvas&gt;
+</pre></code>
+<pre><code>
+var shape = document.getElementById('someshape');
+var context = shape.getContext('2d');
+context.fillStyle = &quot;rgb(255,0,0)&quot;;
+context.fillRect(0, 0, 150, 150);	
+</code></pre>
+						<canvas id="someshape" width="150" height="150"></canvas> 
+						<script>
+						var shape = document.getElementById('someshape'); 
+						var context = shape.getContext('2d'); 
+						context.fillStyle = "rgb(255,0,0)"; 
+						context.fillRect(0, 0, 150, 150); 
+						</script>
+					</section>
+					<section>
+						<h2>Drawing Images</h2>
+
+						<canvas id="confoo_logo">
+						<p>Your browser doesn't support canvas.</p>
+						</canvas>
+
 					</section>
 					<section id="wolfenstein">
 					<h2>Wolfenstein 3D</h2>
@@ -455,6 +513,13 @@ search: while (true) {
 					</section>
 					<section>
 						<h2>Example goes here</h2>
+
+						  <p>The highest prime number discovered so far is:</p> 
+						  <output id="webworker_result"></output>
+						  <form>
+						<input type="button" value="Go!" onClick="findPrimes();" />
+						<input type="button" value="Cancel" onClick="worker.terminate();" />
+						</form>
 					</section>
 					<section>
 						<h2>Can I use it?</h2>
@@ -484,6 +549,7 @@ search: while (true) {
 
 		</div>
 
+		<!--<script src="js/modernizr.min.js"></script>-->
 		<script src="reveal.js/lib/js/head.min.js"></script>
 		<script src="reveal.js/js/reveal.min.js"></script>
 		<script>
@@ -540,10 +606,33 @@ search: while (true) {
 					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'reveal.js-fullscreen-img/fullscreen-img.js' }
-					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+					//{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
 
+			function findPrimes() {
+				var worker = new Worker('js/prime.js');
+			   worker.onmessage = function (event) {
+					document.getElementById('webworker_result').textContent = event.data;
+			   };
+			}
+
+
+			/*
+			var canvas = document.getElementById('mystic_logo');
+			if (canvas.getContext) {
+				alert('canvas');
+				var context = canvas.getContext('2d');
+
+				var myImage = new Image();
+				myImage.onload = function() {
+				  canvas.setAttribute('width', myImage.width);
+				  canvas.setAttribute('height', myImage.height);
+				  context.drawImage(myImage, 0, 0);
+		          }
+			}
+			myImage.src = "images/mystic-logo-contracts.png";
+			*/
 		</script>
 
 	</body>
