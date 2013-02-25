@@ -22,9 +22,42 @@
 
 		<link rel="stylesheet" href="reveal.js-fullscreen-img/fullscreen-img.css" />
 
+		<style>
+			.button {
+				-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+				-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+				box-shadow:inset 0px 1px 0px 0px #ffffff;
+				background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+				background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+				background-color:#ededed;
+				-moz-border-radius:6px;
+				-webkit-border-radius:6px;
+				border-radius:6px;
+				border:1px solid #dcdcdc;
+				display:inline-block;
+				color:#777777;
+				font-family:arial;
+				font-size:15px;
+				font-weight:bold;
+				padding:6px 24px;
+				text-decoration:none;
+				text-shadow:1px 1px 0px #ffffff;
+			}.button:hover {
+				background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+				background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+				background-color:#dfdfdf;
+			}.button:active {
+				position:relative;
+				top:1px;
+			}
+
+		</style>
+
 		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
 		<script>
-			document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+			//document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
 
 
 		</script>
@@ -45,7 +78,7 @@
 				    <object type="image/svg+xml" width="300" height="300" data="images/HTML5-Logo.svg"></object>
 
 					<h1>The HTML5 Landscape</h1>
-					<h3>HTML Presentations Made Easy</h3>
+					<h3>Markup you can use today</h3>
 					<p>
 						<small><a href="http://mysticcoders.com">Andrew Lombardi</a> / <a href="http://twitter.com/kinabalu">@kinabalu</a></small>
 					</p>
@@ -124,9 +157,58 @@
 
 				</section>
 				<section>
+					<h1>Why?</h1>
+				    <object type="image/svg+xml" width="300" height="300" data="images/HTML5-Logo.svg"></object>					
+				</section>
+				<section>
+					<h2>Most popular browsers</h2>
+					<img src="images/StatCounter-browser_version_partially_combined-ww-monthly-201201-201301-bar.jpg" border="0" />
+				</section>
+				<section>
+					<h2>Mobile browser percentages</h2>
+					<img src="images/StatCounter-mobile_browser-ww-monthly-201201-201301-bar.jpg" border="0" />
+				</section>
+				<section>
 					<img src="images/HTML5-APIs-and-related-technologies-by-Sergey-Mavrody.png" border="0" />
 				</section>
 
+				<section>
+					<img src="images/zuck_on_html5.png" border="0" />
+					<p>
+						<em>“When I'm introspective about the last few years, I think the biggest mistake that we made as a company is betting too much on HTML5 as opposed to native. Because it just wasn't there.
+It's not that HTML5 is bad. I'm actually, long-term, really excited about it...”</em>
+					</p>
+				</section>
+				<section>
+					<section>
+					<h2>The Old Way</h2>
+<pre><code>
+&lt;!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Strict//EN” “http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd”&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; lang=&quot;en&quot; xml:lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
+
+&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot; type=&quot;text/css&quot; /&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt; ... &lt;/script&gt;
+&lt;/head&gt;	
+</code></pre>
+					</section>
+					<section>
+						<h2>The HTML5 Way</h2>
+<pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+
+&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot; /&gt;
+
+&lt;script&gt; ... &lt;/script&gt;
+&lt;/head&gt;	
+</code></pre>
+					</section>
+				</section>
 				<section>
 					<section>
 						<h1>HTML5 Video</h1>
@@ -308,7 +390,9 @@ if(Modernizr.video) {
 					<section>
 						<h2>The Cube</h2>
 <!--						<script src="js/webgl_cube.js"></script> -->
+<!--
 						<canvas data-sample="webgl_spinning_colored_cube" style="display:inline" width="320" height="240"></canvas>						
+					-->
 					</section>
 					<section>
 						<h2>Can I use it?</h2>
@@ -338,6 +422,27 @@ if(Modernizr.video) {
 					<section>
 						<h1>HTML5 Forms</h1>
 					    <object type="image/svg+xml" data="images/arrow_down.svg"></object>
+					</section>
+					<section>
+						<h2>New Form Types</h2>
+
+						<table>
+							<thead>
+								<th>
+									Tag
+								</th>
+								<th>
+									Description
+								<th>
+							</thead>
+							<tbody>
+								<tr><td>type=”date”</td><td>Represents a UTC formatted date</td></tr>
+							</tbody>
+						</table>
+					</section>
+					<section id="html5_form">
+						<h2>Sample HTML5 Form</h2>
+						
 					</section>
 					<section>
 						<h2>Can I use it?</h2>
@@ -434,8 +539,8 @@ textarea.value = window.localStorage['value'];
 						<form id="webstorage">
 
 							<textarea id="ta" placeholder="Type some text in here ... it will be saved between restarts" rows="10" cols="70"></textarea>
-
-						<button id="save-ta">Save</button>
+						<br />
+						<button class="button" id="save-ta">Save</button>
 
 						<p id="ta-log"></p>
 
@@ -512,19 +617,30 @@ search: while (true) {
 </code></pre>
 					</section>
 					<section>
-						<h2>Example goes here</h2>
-
-						  <p>The highest prime number discovered so far is:</p> 
-						  <output id="webworker_result"></output>
-						  <form>
-						<input type="button" value="Go!" onClick="findPrimes();" />
-						<input type="button" value="Cancel" onClick="worker.terminate();" />
-						</form>
-					</section>
-					<section>
 						<h2>Can I use it?</h2>
 						<iframe src="http://caniuse.com/webworkers/embed" width="100%" height="100%"></iframe>
 					</section>
+				</section>
+				<section>
+					<h2>More HTML5</h2>
+					<p>
+						<strong>application cache</strong> - specify with a cache.manifest files you’d like the browser to eagerly cache for offline use
+					</p>
+					<p>
+						web database - embedded SQL database which most browsers have chosen to use sqlite
+					</p>
+					<p>
+						cross document messaging - allows documents to communicate regardless of source domain (no XSS script attacks)
+					</p>
+					<p>
+						drag and drop - allows elements to be draggable and droppable
+					</p>
+					<p>
+						webgl - provides an API for writing web applications utilizing hardware accelerated 3D graphics 
+					</p>
+					<p>
+						web notifications - provides an API for alerting users outside of a web page via notifications
+					</p>
 				</section>
 				<section>
 					<p><a href="http://whatwg.org/html5">HTML Standard</a></p>
@@ -541,8 +657,15 @@ search: while (true) {
 					<h1>Q & A</h1>
 					<h3>Andrew Lombardi / <a href="http://www.twitter.com/kinabalu">@kinabalu</a></h3>
 					<p>
-						kinabalu @ <a href="irc://irc.freenode.net">irc://irc.freenode.net</a> - ##wicket, ##java, #javascript
+						kinabalu @ <a href="irc://irc.freenode.net">irc://irc.freenode.net</a>
 					</p>
+					<p>
+						<small>##wicket, ##java, #javascript</small>
+					</p>
+					<p>
+						<small><a href="https://github.com/kinabalu/html5presentation">https://github.com/kinabalu/html5presentation</a></small>
+					</p>
+
 				</section>
 
 			</div>
@@ -561,6 +684,9 @@ search: while (true) {
 			    if(event.previousSlide.getAttribute('id')=='wolfenstein') {
 			    	document.getElementById('wolfenstein_iframe').parentNode.removeChild(document.getElementById('wolfenstein_iframe'));
 				}
+				if(event.previousSlide.getAttribute('id')=='html5_form') {
+			    	document.getElementById('html5_form_iframe').parentNode.removeChild(document.getElementById('html5_form_iframe'));					
+				}
 
 				if(event.currentSlide.getAttribute('id')=='balloonshooter') {
 					var iframe = document.createElement("iframe");
@@ -577,6 +703,15 @@ search: while (true) {
 					iframe.width = '100%';
 					iframe.height = '100%';
 					document.getElementById('wolfenstein').appendChild(iframe);					
+				}
+				if(event.currentSlide.getAttribute('id')=='html5_form') {
+					var iframe = document.createElement('iframe');
+					iframe.src = "form.html";
+					iframe.id = 'html5_form_iframe';
+					iframe.width = '100%';
+					iframe.height = '100%';
+					iframe.allowTransparency = "true";
+					document.getElementById('html5_form').appendChild(iframe);
 				}
 
 			} );			
@@ -609,14 +744,6 @@ search: while (true) {
 					//{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
-
-			function findPrimes() {
-				var worker = new Worker('js/prime.js');
-			   worker.onmessage = function (event) {
-					document.getElementById('webworker_result').textContent = event.data;
-			   };
-			}
-
 
 			/*
 			var canvas = document.getElementById('mystic_logo');

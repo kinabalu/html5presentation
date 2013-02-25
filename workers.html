@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html manifest="demo.appcache">
+<head>
+<title>Web Worker Demo</title>
+</head>
+<body>
+  <p>The highest prime number discovered so far is: <output id="result"></output></p>
+  <button onclick="findPrimes();">Find Primes</button>
+  <button onclick="worker.terminate();">Stop!</button>
+  <script>
+    var worker;
+
+    function findPrimes() {
+       worker = new Worker('worker.js');
+       worker.onmessage = function (event) {
+         document.getElementById('result').textContent = event.data;
+       };
+    }
+  </script>
+</body>
+</html>
