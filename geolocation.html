@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="http://maps.google.com/maps/api/js?sensor=false">
+</script>
+<script type="text/javascript">
+
+    //Check browser support.
+    if (navigator.geolocation) {
+    
+        //Get current position
+        navigator.geolocation.getCurrentPosition(function(position){
+        
+        //Get latlatitude and longitude
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        var coords = new google.maps.LatLng(latitude, longitude);
+        
+        //Add map options
+        var mapOptions = {
+            
+            //zoom level, between 0 to 21.
+            zoom: 15,
+            
+            //center to the user location
+            center: coords,
+            
+            //add map type controls.
+            mapTypeControl: true,
+            
+            //navigation control options
+            navigationControlOptions: {
+                style: google.maps.NavigationControlStyle.SMALL
+            },
+            
+            //default map type
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+            };          
+            
+            //create the map, and place it in the mapContainer div
+            map = new google.maps.Map(
+                document.getElementById("mapContainer"), mapOptions
+                );          
+            
+            //place the initial marker
+            var marker = new google.maps.Marker({
+                    position: coords,
+                    map: map,
+                    title: "Your current location!"
+            });
+    
+        }); 
+    }else {
+        //browser does not support geolocation.
+        alert("Geolocation API is not supported in your browser.");
+    }
+</script>
+<style>
+#mapContainer {
+    height: 500px;
+    width: 800px;
+    border:10px solid #eaeaea;  
+}
+</style>
+</head>
+<body>
+
+<div id="mapContainer"></div>
+
+</body>
+</html>

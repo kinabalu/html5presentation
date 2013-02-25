@@ -161,6 +161,11 @@
 				    <object type="image/svg+xml" width="300" height="300" data="images/HTML5-Logo.svg"></object>					
 				</section>
 				<section>
+					<h2>Because of mobile</h2>
+				    <object type="image/svg+xml" width="300" height="300" data="images/Apple_Computer_Logo_rainbow.svg"></object>					
+				    <object type="image/svg+xml" width="300" height="300" data="images/Android_robot.svg"></object>					
+				</section>
+				<section>
 					<h2>Most popular browsers</h2>
 					<img src="images/StatCounter-browser_version_partially_combined-ww-monthly-201201-201301-bar.jpg" border="0" />
 				</section>
@@ -404,6 +409,34 @@ if(Modernizr.video) {
 						<h1>GeoLocation</h1>
 					</section>
 					<section>
+						<h2>GeoLocation Current Position</h2>
+<pre><code>
+if (navigator.geolocation) {
+	navigator.geolocation.getCurrentPosition(function(position) {
+	var lat = position.coords.latitude;
+	var lng = position.coords.longitude;
+	alert('Your currently @ ('+lat+', '+lng+')');
+	});
+}	
+</code></pre>			
+						<button onclick="getCurrentPosition()">Get Current Position</button>
+
+						<script>					
+						function getCurrentPosition() {
+							if (navigator.geolocation) {
+								navigator.geolocation.getCurrentPosition(function(position) {
+								var lat = position.coords.latitude;
+								var lng = position.coords.longitude;
+								alert('Your currently @ ('+lat+', '+lng+')');
+								});
+							}
+						}
+						</script>
+					</section>
+					<section id="geolocation">
+						<h2>Geolocated Map</h2>
+					</section>
+					<section>
 						<h2>Can I use it?</h2>
 						<iframe src="http://caniuse.com/geolocation/embed" width="100%" height="100%"></iframe>
 					</section>
@@ -428,18 +461,37 @@ if(Modernizr.video) {
 
 						<table>
 							<thead>
-								<th>
-									Tag
-								</th>
-								<th>
-									Description
-								<th>
+								<th>Tag</th>
+								<th>Description<th>
 							</thead>
 							<tbody>
 								<tr><td>type=”date”</td><td>Represents a UTC formatted date</td></tr>
+								<tr><td>type="color"</td><td>Represents a hexadecimal RGB color value</td></tr>
+								<tr><td>type="number”</td><td>Represents a numeric value</td></tr>
+								<tr><td>type="search”</td><td>Simple text box but browser can choose to provide custom control</td></tr>
+								<tr><td>type=”email, url, tel”</td><td>Represents a UTC formatted date</td></tr>
+								<tr><td>type=”range”</td><td>Represents a range of values with min/max</td></tr>
 							</tbody>
 						</table>
 					</section>
+					<section>
+						<h2>New Form Types</h2>
+
+						<table>
+							<thead>
+								<th>Tag</th>
+								<th>Description<th>
+							</thead>
+							<tbody>
+								<tr><td>pattern="some.regex"</td><td>Use a regex to validate against the input without requiring Javascript involvement</td></tr>
+								<tr><td>placeholder="Jane Doe"</td><td>Attached to input type=”text” to show placeholder text before user clicks</td></tr>
+								<tr><td>autofocus</td><td>Boolean value used only once per page identifying the form component that should receive immediate focus after page load</td></tr>
+								<tr><td>autocomplete</td><td>on/off switch used to tell browser if it’s okay to autocomplete this field with saved data</td></tr>
+								<tr><td>&lt;datalist&gt;</td><td>A combo box allowing selection via preselected values or entering custom</td></tr>
+								<tr><td>type=”range”</td><td>Represents a range of values with min/max</td></tr>
+							</tbody>
+						</table>
+					</section>					
 					<section id="html5_form">
 						<h2>Sample HTML5 Form</h2>
 						
@@ -454,6 +506,44 @@ if(Modernizr.video) {
 						<h1>New Semantic Tags</h1>
 					    <object type="image/svg+xml" data="images/arrow_down.svg"></object>
 					</section>
+					<section>
+						<h2>Typical page layout</h2>
+						<img src="images/html5pagelayout.png" border="0" />
+					</section>
+					<section>
+						<h2>Semantic Tags</h2>
+						<table>
+							<thead>
+								<th>Tag</th>
+								<th>Description<th>
+							</thead>
+							<tbody>
+								<tr><td>&lt;section&gt;</td><td>A generic section of a document or application, a grouping of content typically with a header</td></tr>
+								<tr><td>&lt;nav&gt;</td><td>Used to identify major navigation links on the page, usually in the header of a page</td></tr>
+								<tr><td>&lt;article&gt;</td><td>A reusable, independently distributable composition in a document, page, application or site</td></tr>
+								<tr><td>&lt;aside&gt;</td><td>Tangentially related content to the main article (sidebars, pull quotes, advertising)</td></tr>
+								<tr><td>&lt;hgroup&gt;</td><td>Used to group h1-h6 elements when heading has multiple levels</td></tr>
+								<tr><td>&lt;header&gt;</td><td>Represents a group of introductory or navigational aids</td></tr>
+							</tbody>
+						</table>
+					</section>					
+					<section>
+						<h2>Semantic Tags</h2>
+						<table>
+							<thead>
+								<th>Tag</th>
+								<th>Description<th>
+							</thead>
+							<tbody>
+								<tr><td>&lt;footer&gt;</td><td>Represents a footer for its nearest ancestor sectioning content or root element.  Bottom of a page as well as &lt;section&gt;’s of a page are relevant here</td></tr>
+								<tr><td>&lt;time&gt;</td><td>Represents time on a 24-hour clock, or precise date optionally with timezone</td></tr>
+								<tr><td>&lt;mark&gt;</td><td>Represents a run of text in one document marked or highlighted for reference purposes</td></tr>
+								<tr><td>&lt;meter&gt;</td><td>Can be used to mark up measurements, part of a scale with min/max values</td></tr>
+								<tr><td>&lt;progress&gt;</td><td>Markup denoting a value that is in the process of changing</td></tr>
+							</tbody>
+						</table>
+					</section>	
+
 					<section>
 						<h2>Semantic Tags in Internet Explorer</h2>
 
@@ -675,45 +765,37 @@ search: while (true) {
 		<!--<script src="js/modernizr.min.js"></script>-->
 		<script src="reveal.js/lib/js/head.min.js"></script>
 		<script src="reveal.js/js/reveal.min.js"></script>
+		<script src="js/underscore-min.js"></script>
 		<script>
+
+			var iframe_sections = [
+				{'name': 'balloonshooter', 'url': 'balloonshooter/bubbles/index.html'},
+				{'name': 'wolfenstein', 'url': 'http://www.nihilogic.dk/labs/wolf/'},
+				{'name': 'html5_form', 'url': 'form.html'},
+				{'name': 'geolocation', 'url': 'geolocation.html'}
+			];
+
 			Reveal.addEventListener( 'slidechanged', function( event ) {
 			    // event.previousSlide, event.currentSlide, event.indexh, event.indexv
-			    if(event.previousSlide.getAttribute('id')=='balloonshooter') {
-			    	document.getElementById('balloonshooter_iframe').parentNode.removeChild(document.getElementById('balloonshooter_iframe'));
-				}
-			    if(event.previousSlide.getAttribute('id')=='wolfenstein') {
-			    	document.getElementById('wolfenstein_iframe').parentNode.removeChild(document.getElementById('wolfenstein_iframe'));
-				}
-				if(event.previousSlide.getAttribute('id')=='html5_form') {
-			    	document.getElementById('html5_form_iframe').parentNode.removeChild(document.getElementById('html5_form_iframe'));					
-				}
 
-				if(event.currentSlide.getAttribute('id')=='balloonshooter') {
-					var iframe = document.createElement("iframe");
-					iframe.src = "balloonshooter/bubbles/index.html";
-					iframe.id = 'balloonshooter_iframe';
-					iframe.width = '100%';
-					iframe.height = '100%';
-					document.getElementById('balloonshooter').appendChild(iframe);					
-				}
-				if(event.currentSlide.getAttribute('id')=='wolfenstein') {
-					var iframe = document.createElement("iframe");
-					iframe.src = "http://www.nihilogic.dk/labs/wolf/";
-					iframe.id = 'wolfenstein_iframe';
-					iframe.width = '100%';
-					iframe.height = '100%';
-					document.getElementById('wolfenstein').appendChild(iframe);					
-				}
-				if(event.currentSlide.getAttribute('id')=='html5_form') {
-					var iframe = document.createElement('iframe');
-					iframe.src = "form.html";
-					iframe.id = 'html5_form_iframe';
-					iframe.width = '100%';
-					iframe.height = '100%';
-					iframe.allowTransparency = "true";
-					document.getElementById('html5_form').appendChild(iframe);
-				}
+				_.each(iframe_sections, function(id_name) {
+					name = id_name['name'];
+					url = id_name['url'];
 
+//					console.log('name:'+name+', url:'+url);
+				    if(event.previousSlide && event.previousSlide.getAttribute('id')==name) {
+				    	document.getElementById(name+'_iframe').parentNode.removeChild(document.getElementById(name+'_iframe'));
+					}
+
+					if(event.currentSlide.getAttribute('id')==name) {
+						var iframe = document.createElement("iframe");
+						iframe.src = url;
+						iframe.id = name+'_iframe';
+						iframe.width = '100%';
+						iframe.height = '100%';
+						document.getElementById(name).appendChild(iframe);					
+					}
+				});
 			} );			
 			Reveal.addEventListener( 'overviewshown', function( event ) { 
 			} );
