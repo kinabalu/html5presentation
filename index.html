@@ -448,6 +448,62 @@ if (navigator.geolocation) {
 					    <object type="image/svg+xml" data="images/arrow_down.svg"></object>
 					</section>
 					<section>
+						<object type="image/svg+xml" data="images/nodejs_logo.svg"></object>
+						<h2>+</h2>
+						<img src="images/socketio_logo.jpg" border="0" />
+					</section>
+					<section>
+						<h2>Chat Server</h2>
+<pre><code>
+var io = require('socket.io').listen(3000);
+
+var buffer = [];
+io.sockets.on('connection', function(client) {
+    client.emit('history', { buffer: buffer });
+    io.sockets.emit('announcement', client.id + ' connected');
+
+    client.on('message', function(message){
+        var msg = { message: [client.id, message] };
+        buffer.push(msg);
+        if (buffer.length > 15) buffer.shift();
+        io.sockets.emit('message', msg);
+    });
+
+    client.on('disconnect', function(){
+        io.sockets.emit('announcement', client.id + ' disconnected');
+    });
+});	
+</code></pre>						
+					</section>
+					<section>
+						<h2>Chat Client</h2>
+<pre><code>
+var socket = io.connect('http://localhost:3000');
+
+socket.on('connect', function () {
+  socket.on('message', function (data) {
+      ...
+  });
+
+  socket.on('announcement', function (data) {
+      ...
+  });
+
+  socket.on('history', function (data) {
+    data.buffer.forEach(function (item) {
+        ...
+    });
+  });
+});	
+</code></pre>						
+					</section>
+					<section id="websocket">
+						<h2>Chat Server Example</h2>
+						<!-- example from https://github.com/afshinm/socket.io-chat-server -->
+						<iframe src="websocket.html" width="50%" height="50%"></iframe>
+						<iframe src="websocket.html" width="50%" height="50%"></iframe>
+					</section>
+					<section>
 						<h2>Can I use it?</h2>
 						<iframe src="http://caniuse.com/websockets/embed" width="100%" height="100%"></iframe>
 					</section>
@@ -761,7 +817,6 @@ search: while (true) {
 
 		</div>
 
-		<!--<script src="js/modernizr.min.js"></script>-->
 		<script src="reveal.js/lib/js/head.min.js"></script>
 		<script src="reveal.js/js/reveal.min.js"></script>
 		<script src="js/underscore-min.js"></script>
@@ -782,7 +837,6 @@ search: while (true) {
 					name = id_name['name'];
 					url = id_name['url'];
 
-//					console.log('name:'+name+', url:'+url);
 				    if(event.previousSlide && event.previousSlide.getAttribute('id')==name) {
 				    	document.getElementById(name+'_iframe').parentNode.removeChild(document.getElementById(name+'_iframe'));
 					}
