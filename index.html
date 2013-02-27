@@ -187,7 +187,15 @@ font-family: Futura, Arial, sans-serif; }
 				<section>
 					<img src="images/HTML5-APIs-and-related-technologies-by-Sergey-Mavrody.png" border="0" />
 				</section>
-
+				<section>
+					<h2>Responsive Web Design</h2>
+					<p class="fragment">Mobile First, Responsive, Adaptive</p>
+<pre class="fragment"><code>
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
+</code></pre>
+					<p class="fragment">css3, @media queries</p>
+<pre class="fragment"><code>data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdV</code></pre>
+				</section>
 				<section>
 					<img src="images/zuck_on_html5.png" border="0" />
 					<p>
@@ -364,8 +372,14 @@ if(Modernizr.video) {
 }
 </code></pre>
 					</section>
+					<section>
+						<img src="images/logo-selectivizr.png" border="0" />
+						<p>CSS3 selectors for IE6 - IE8</p>
+<pre><code>
+&lt;script type=&quot;text/javascript&quot; src=&quot;[JS library]&quot;&gt;&lt;/script&gt;<br/>&lt;!--[if (gte IE 6)&amp;(lte IE 8)]&gt;<br/>  &lt;script type=&quot;text/javascript&quot; src=&quot;selectivizr.js&quot;&gt;&lt;/script&gt;<br/>  &lt;noscript&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;[fallback css]&quot; /&gt;&lt;/noscript&gt;<br/>&lt;![endif]--&gt;	
+</code></pre>
 				</section>
-				<section>
+
 					<section>
 						<h1>SVG</h1>
 					    <object type="image/svg+xml" data="images/arrow_down.svg"></object>
@@ -397,6 +411,15 @@ if(Modernizr.video) {
 	&lt;polygon fill=&quot;#FFFFFF&quot; points=&quot;255.843,176.305 255.843,204.509 255.843,221.605 255.843,221.716 365.385,221.716 365.385,221.716 365.531,221.716 366.442,211.509 368.511,188.488 369.597,176.305&quot;/&gt;
 &lt;/svg&gt;	
 </code></pre>
+					</section>
+					<section>
+						<h2>Benefits</h2>
+						<ul>
+							<li>Resolution Independence</li>
+							<li>DOM Accessible</li>
+							<li>No unnecessary HTTP requests</li>
+							<li>Script Accessible</li>							
+						</ul>
 					</section>
 					<section>
 						<h2>Can I use it?</h2>
@@ -890,8 +913,8 @@ search: while (true) {
 					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'reveal.js-fullscreen-img/fullscreen-img.js' }
-					//{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: 'reveal.js-fullscreen-img/fullscreen-img.js' },
+					{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
 
