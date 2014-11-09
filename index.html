@@ -6,8 +6,8 @@
 
 		<title>The HTML5 Landscape</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="A presentation about the technologies in HTML5 you can use today">
+		<meta name="author" content="Andrew Lombardi">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -52,6 +52,17 @@
 				position:relative;
 				top:1px;
 			}
+
+table { border-collapse: collapse;
+font-family: Futura, Arial, sans-serif; }
+.reveal th, td { padding: 1em; }
+.reveal th, .reveal thead { background: #000; color: #fff; border: 1px solid #fff; }
+/*.reveal tr:nth-child(odd) { background: #ccc; }*/
+.reveal tr:hover { background: #aaa; }
+.reveal td { border: 1px solid #777; }
+.reveal th { font-size: 0.75em;}
+.reveal td { font-size: 0.5em; font-weight: normal; padding: 1em;}
+.reveal table { border: 1px solid #777; }
 
 		</style>
 
@@ -176,13 +187,25 @@
 				<section>
 					<img src="images/HTML5-APIs-and-related-technologies-by-Sergey-Mavrody.png" border="0" />
 				</section>
-
+				<section>
+					<h2>Responsive Web Design</h2>
+					<p class="fragment">Mobile First, Responsive, Adaptive</p>
+<pre class="fragment"><code>
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
+</code></pre>
+					<p class="fragment">css3, @media queries</p>
+<pre class="fragment"><code>data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdV</code></pre>
+				</section>
 				<section>
 					<img src="images/zuck_on_html5.png" border="0" />
 					<p>
 						<em>“When I'm introspective about the last few years, I think the biggest mistake that we made as a company is betting too much on HTML5 as opposed to native. Because it just wasn't there.
 It's not that HTML5 is bad. I'm actually, long-term, really excited about it...”</em>
 					</p>
+				</section>
+				<section>
+					<h2>Sencha Proved Facebook Wrong</h2>
+					<a href="http://www.sencha.com/blog/the-making-of-fastbook-an-html5-love-story/"><img src="images/fastbook-hero.png" border="0" /></a>
 				</section>
 				<section>
 					<section>
@@ -349,8 +372,14 @@ if(Modernizr.video) {
 }
 </code></pre>
 					</section>
+					<section>
+						<img src="images/logo-selectivizr.png" border="0" />
+						<p>CSS3 selectors for IE6 - IE8</p>
+<pre><code>
+&lt;script type=&quot;text/javascript&quot; src=&quot;[JS library]&quot;&gt;&lt;/script&gt;<br/>&lt;!--[if (gte IE 6)&amp;(lte IE 8)]&gt;<br/>  &lt;script type=&quot;text/javascript&quot; src=&quot;selectivizr.js&quot;&gt;&lt;/script&gt;<br/>  &lt;noscript&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;[fallback css]&quot; /&gt;&lt;/noscript&gt;<br/>&lt;![endif]--&gt;	
+</code></pre>
 				</section>
-				<section>
+
 					<section>
 						<h1>SVG</h1>
 					    <object type="image/svg+xml" data="images/arrow_down.svg"></object>
@@ -360,6 +389,8 @@ if(Modernizr.video) {
 <pre><code>&lt;object type=&quot;image/svg+xml&quot; data=&quot;images/HTML5-Logo.svg&quot;&gt;&lt;/object&gt;
 </code></pre>
 						<object class="fragment" type="image/svg+xml" width="300" height="300" data="images/HTML5-Logo.svg"></object>
+
+
 					</section>
 					<section>
 						<h2>SVG Inline</h2>
@@ -382,6 +413,15 @@ if(Modernizr.video) {
 </code></pre>
 					</section>
 					<section>
+						<h2>Benefits</h2>
+						<ul>
+							<li>Resolution Independence</li>
+							<li>DOM Accessible</li>
+							<li>No unnecessary HTTP requests</li>
+							<li>Script Accessible</li>							
+						</ul>
+					</section>
+					<section>
 						<h2>Can I use it?</h2>
 						<iframe src="http://caniuse.com/svg/embed" width="100%" height="100%"></iframe>
 					</section>
@@ -390,7 +430,6 @@ if(Modernizr.video) {
 					<!--<script src="js/three.min.js"></script>-->
 					<section>
 						<h1>WebGL</h1>
-					    <object type="image/svg+xml" data="images/arrow_down.svg"></object>
 					</section>
 					<section>
 						<h2><a href="http://mrdoob.github.com/three.js/">Use Three.js</a></h2>
@@ -519,7 +558,7 @@ socket.on('connect', function () {
 						<table>
 							<thead>
 								<th>Tag</th>
-								<th>Description<th>
+								<th>Description</th>
 							</thead>
 							<tbody>
 								<tr><td>type=”date”</td><td>Represents a UTC formatted date</td></tr>
@@ -537,7 +576,7 @@ socket.on('connect', function () {
 						<table>
 							<thead>
 								<th>Tag</th>
-								<th>Description<th>
+								<th>Description</th>
 							</thead>
 							<tbody>
 								<tr><td>pattern="some.regex"</td><td>Use a regex to validate against the input without requiring Javascript involvement</td></tr>
@@ -572,7 +611,7 @@ socket.on('connect', function () {
 						<table>
 							<thead>
 								<th>Tag</th>
-								<th>Description<th>
+								<th>Description</th>
 							</thead>
 							<tbody>
 								<tr><td>&lt;section&gt;</td><td>A generic section of a document or application, a grouping of content typically with a header</td></tr>
@@ -589,7 +628,7 @@ socket.on('connect', function () {
 						<table>
 							<thead>
 								<th>Tag</th>
-								<th>Description<th>
+								<th>Description</th>
 							</thead>
 							<tbody>
 								<tr><td>&lt;footer&gt;</td><td>Represents a footer for its nearest ancestor sectioning content or root element.  Bottom of a page as well as &lt;section&gt;’s of a page are relevant here</td></tr>
@@ -770,21 +809,19 @@ search: while (true) {
 				</section>
 				<section>
 					<h2>More HTML5</h2>
-					<p>
-						<strong>application cache</strong> - specify with a cache.manifest files you’d like the browser to eagerly cache for offline use
-					</p>
-					<p>
-						web database - embedded SQL database which most browsers have chosen to use sqlite
-					</p>
-					<p>
-						cross document messaging - allows documents to communicate regardless of source domain (no XSS script attacks)
-					</p>
-					<p>
-						drag and drop - allows elements to be draggable and droppable
-					</p>
-					<p>
-						web notifications - provides an API for alerting users outside of a web page via notifications
-					</p>
+					<table>
+						<thead>
+							<th>Technology</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+						<tr><td>application cache</td><td>specify with a cache.manifest files you’d like the browser to eagerly cache for offline use</td></tr>
+						<tr><td>web database</td><td>embedded SQL database which most browsers have chosen to use sqlite</td></tr>
+						<tr><td>cross document messaging</td><td>allows documents to communicate regardless of source domain (no XSS script attacks)</td></tr>
+						<tr><td>drag and drop</td><td>allows elements to be draggable and droppable</td></tr>
+						<tr><td>web notifications</td><td>provides an API for alerting users outside of a web page via notifications</td></tr>
+						</tbody>
+					</table>
 				</section>
 				<section>
 					<h2>Helpful Links</h2>
@@ -876,8 +913,8 @@ search: while (true) {
 					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'reveal.js-fullscreen-img/fullscreen-img.js' }
-					//{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: 'reveal.js-fullscreen-img/fullscreen-img.js' },
+					{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
 
